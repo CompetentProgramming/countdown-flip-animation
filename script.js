@@ -14,15 +14,13 @@ window.addEventListener('load', () => {
     let totalSeconds;
     
     function init() {
-        totalSeconds = Math.floor((new Date('01/01/2021') - new Date()) / 1000); 
+        totalSeconds = Math.floor((new Date('01/01/2022') - new Date()) / 1000); 
         setTimeLeft();
-        console.log(333, timeLeft);
         let interval = setInterval(() => {
             if (totalSeconds < 0) {
                 clearInterval(interval);
             }
             countTime();
-            // console.log(timeLeft);
         }, 1000);
     }
     
@@ -59,8 +57,6 @@ window.addEventListener('load', () => {
     
         if (valueInDom === currentValue) return;
     
-        console.log(111, currentValue);
-        console.log(222, value);
         element.querySelector('.top-back span').innerText = currentValue;
         element.querySelector('.bottom-back span').innerText = currentValue;
     
@@ -88,7 +84,6 @@ window.addEventListener('load', () => {
     
     
     function setTimeLeft() {
-        console.log(444, totalSeconds);
         timeLeft.d = Math.floor(totalSeconds / (60 * 60 * 24));
         timeLeft.h = Math.floor(totalSeconds / (60 * 60) % 24);
         timeLeft.m = Math.floor(totalSeconds / (60) % 60);
